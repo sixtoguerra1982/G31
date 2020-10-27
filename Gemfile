@@ -18,7 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # instalar devise
 gem 'devise'
-
+# faker
+gem 'faker'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

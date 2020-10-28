@@ -5,12 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-20.times do |i|
-    
-      i+= 1
-      Product.create!(
-        name: Faker::Commerce.product_name,
-        price: i * 1000
-      )
 
+#20.times do |i|
+#    
+#      i+= 1
+#      Product.create!(
+#        name: Faker::Commerce.product_name,
+#        price: i * 1000
+#      )
+#
+#end
+
+30.times do |i|
+    4.times do |j|
+        3.times do |k|
+            Variation.create!(size: j, color:k)
+        end
+    end
+    puts i
 end

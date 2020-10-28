@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 # faker
 gem 'faker'
+# erd
+gem 'rails-erd', group: :development
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

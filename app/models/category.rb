@@ -6,10 +6,19 @@ class Category < ApplicationRecord
             padre = Category.find_by(id: self.category_id)
             if padre == nil
                 raise "Padre no Encontrado"
+            end
+        end
+    end
+
+    def father
+        if self.father?
+            raise 'No tiene categoria relacionada'
+        else
+            padre = Category.find_by(id: self.category_id)
+            if padre.nil?
+                raise 'Categoria No Encontrada'
             else
-                if padre.category_id != 0
-                    raise "Padre a asignar, no corresponde a Padre"
-                end
+                return padre.name
             end
         end
     end

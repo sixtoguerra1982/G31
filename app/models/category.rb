@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
+    has_many :product_categories
     before_save :category_id_validation
 
     def category_id_validation

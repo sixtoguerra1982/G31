@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  before_action :check_rol
   # GET /products
   # GET /products.json
   def index
@@ -70,5 +71,12 @@ class ProductsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def product_params
       params.require(:product).permit(:name, :price)
+    end
+
+    def check_rol
+      if !current_user.admin?
+        # si el usuario no es admin vuelve al root
+        redirect_to root_path
+      end
     end
 end

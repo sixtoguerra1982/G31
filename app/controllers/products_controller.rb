@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :check_rol
+  before_action :check_rol, :except => [:addproducttocart]
   # GET /products
   # GET /products.json
   def index
@@ -61,6 +61,11 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def addproducttocart
+    byebug
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

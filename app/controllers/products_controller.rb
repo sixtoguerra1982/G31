@@ -63,7 +63,17 @@ class ProductsController < ApplicationController
   end
 
   def addproducttocart
-    byebug
+    product = Product.find(params[:id])
+    order = Order.find_by(user_id:current_user.id, finish: false)
+    if order.nil?
+      order = Order.new
+      order.user_id = current_user.id
+      order.total_amount = product.price
+      order.save
+    else
+      order.total_amount+=product.price
+      order.save
+    end
   end
 
 

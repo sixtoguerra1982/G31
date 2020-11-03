@@ -5,7 +5,7 @@
             <div class="cuadrado">
                 <p>Nombre: <%=p.name %> </p>
                 <p>Precio: <%=p.price %> </p>
-                <%= link_to 'Agregar', addtocart_path(p) %>
+                <%= link_to 'Agregar', addtocart_path(p), method: :post %>
             </div>
         </div>
     <% end %>
